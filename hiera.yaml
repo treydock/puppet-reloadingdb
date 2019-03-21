@@ -1,0 +1,17 @@
+---
+version: 5
+defaults:
+  datadir: data
+  data_hash: yaml_data
+hierarchy:
+  - name: "Hierarchy (yaml version)"
+    paths:
+      - common.yaml
+  - name: "Hierarchy (eyaml version)"
+    paths:
+      - common.eyaml
+    lookup_key: eyaml_lookup_key
+    options:
+      gpg_gnupghome: /root/.gnupg
+      encrypt_method: gpg
+      gpg_always_trust: true
