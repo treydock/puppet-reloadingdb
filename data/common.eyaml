@@ -77,6 +77,21 @@ reloadingdb_database_password_staging: >
     dwb/k4dmJ670lwZcrGPhZuLN3BtaSR2bhTFrVYllerPSTwFj4Ebbhv3A3W53
     tjsJ3ps9bAzFTGQfAljihjdHA5pGUMjuMOYxIBQGOymot8/OfaQOUY4DvqsB
     EFBL8WUqDMzdbrzlmPSLLiO5OJgiUzc=]
+reloadingdb_master_key: >
+    ENC[GPG,hQIMA9OrdTBygJl2AQ/+M/XPT6P4JSt8t93t+ZG31xJ3s0arD1ovCV5++8dK
+    PeuwGFh5LhDjunoGkQV9xmLQtj7Ll1PaVQ7WSh7DF9q3P0O9ZmGdVN4o+6tB
+    bx+S/307VRdl+E+VT9C6aTT1dWCdY2A0s/hSqGCi66hPB575DOLeXNAWxqY9
+    RE+BsdTHliNE0SUppWFvK6P7++3UuNdiAIQdieLn/LlwdmXjbNfVi0D00661
+    gla0ej2pW8Gefo1NcRNxGNOHYtZmcSazYan4cTe4IUxoaPs1ZW9lk+IFYMdI
+    TEOFA6yK0vcI+zFEVKcH5hYTBoy65qjNwSM7AHq1MWbaXQJ7D/cQMymx83Aa
+    tlthEeIUoO/CbUjaYzyhuJIpgXFsvU/z0WCkcOM8fNBZy8mXvCuRtkp+Hr6r
+    btrrZC/Sz1Wr3q77LnOZpt0DJm5DdwKSfGoZFg49i3HxRG4G34XqOrGLvs+e
+    waZnCS77UUVNOM0XvA1h8FjGuQfNKQUog+mCiOb5qti5AmHRdmbp9Y5/6cSM
+    4POJaggzfgj05eNunzJ1MW2Lc8lXVGDM7gGAmbMB4OI/wnYiRN2wsooreLMe
+    rbDfKo9JeV+X36qXiMepQngyt2TNMTKKCHL0gpT6ZXTrWVmLIbx0wdlednvS
+    x7gt+p6oOnW0uMv4soIBg4Xfb6hyoOM0n++ELwAT8o/SWwENQM6u7XAplhZH
+    Edfqu5+iofHI5yqpsFHWlJ9vTa2Vf9Q9gPWC7Bc8K3T9rHdD9JziHRb82Kww
+    /tUaWxGEQh1ENDROL3B3CMqHc4sGl2eQvoOcZv3bfafOwOc=]
 root::ssh_authorized_keys:
   tdockendorf@OSC-NC167012.local:
     type: ssh-rsa
