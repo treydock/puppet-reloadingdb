@@ -65,4 +65,5 @@ Vagrant.configure("2") do |config|
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", inline: 'cp -f /vagrant/treydock.gpg /root/treydock.gpg'
   config.vm.provision "shell", path: 'scripts/bootstrap.sh', args: 'test'
+  config.vm.provision "shell", inline: '/opt/puppetlabs/puppet/bin/puppet apply /etc/puppetlabs/code/environments/production/manifests/site.pp'
 end
