@@ -3,6 +3,7 @@ define profile::reloadingdb::env (
   String $webhost = 'reloadingdb.com',
   Integer $uid = 1002,
   Hash $ssh_authorized_keys = {},
+  Array $admin_emails = ['treydock@gmail.com'],
 ) {
 
   $user = "reloadingdb-${name}"
@@ -49,6 +50,11 @@ define profile::reloadingdb::env (
       user   => $user,
       *      => $key,
     }
+  }
+  mailalias { $user:
+    ensure    => 'present',
+    recipient => $admin_emails,
+    notify    => Exec['newaliases'],
   }
 
   exec { "mkdir -p ${approot}":

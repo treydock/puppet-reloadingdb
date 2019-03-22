@@ -1,6 +1,8 @@
 forge "http://forge.puppetlabs.com"
 
+mod 'puppet/alternatives', '2.1.0'
 mod 'puppetlabs/apache', '4.0.0'
+mod 'camptocamp/augeas', '1.7.0'
 mod 'herculesteam/augeasproviders_core', '2.4.0'
 mod 'herculesteam/augeasproviders_sysctl', '2.3.1'
 mod 'puppetlabs/concat', '5.3.0'
@@ -11,6 +13,7 @@ mod 'puppetlabs/inifile', '2.5.0'
 mod 'iptables', git: 'https://github.com/treydock/puppet-iptables.git', ref: 'b440062'
 mod 'puppet/letsencrypt', '3.0.0'
 mod 'puppetlabs/mysql', '8.0.1'
+mod 'camptocamp/postfix', '1.7.0'
 mod 'puppet/redis', '4.0.0'
 mod 'treydock/root', '4.0.0'
 #mod 'rvm', git: 'https://github.com/maestrodev/puppet-rvm.git', ref: '967c58c'

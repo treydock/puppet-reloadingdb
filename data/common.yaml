@@ -20,6 +20,8 @@ mysql::server::remove_default_accounts: true
 mysql::server::backup::backupuser: 'backup'
 mysql::server::backup::backupdir: '/opt/mysql-backups'
 mysql::server::backup::file_per_database: true
+postfix::manage_root_alias: false
+postfix::relayhost: 'direct'
 redis::manage_repo: true
 profile::reloadingdb::ssh_authorized_keys: "%{alias('root::ssh_authorized_keys')}"
 root::password: $6$saltsalt$9ziBs9AEJySZ60zE.FFuAgkhdbA.zeO3Uv6m7ACU45I05EdujZ4cvVIJW9JIqK7hnIvn/Ci/CsASOZ9VWiPgv.
