@@ -1,6 +1,10 @@
 ---
+apache::default_vhost: false
+apache::default_ssl_vhost: false
 profile::firewall::allow_ssh: "%{alias('dev_addresses')}"
 profile::firewall::allow_apache: "%{alias('dev_addresses')}"
+letsencrypt::email: treydock@gmail.com
+letsencrypt::configure_epel: true
 profile::mysql::databases:
   reloadingdb_staging:
     user: staging

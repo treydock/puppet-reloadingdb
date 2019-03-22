@@ -1,5 +1,6 @@
 #
 class role::reloadingdb {
+  include profile::apache
   include profile::firewall
   include profile::mysql
   include profile::redis
