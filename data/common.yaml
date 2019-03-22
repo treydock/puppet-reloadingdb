@@ -3,7 +3,7 @@ apache::default_vhost: false
 apache::default_ssl_vhost: false
 profile::firewall::allow_ssh: "%{alias('dev_addresses')}"
 profile::firewall::allow_apache: "%{alias('dev_addresses')}"
-letsencrypt::email: treydock@gmail.com
+letsencrypt::email: "%{lookup('admin_email')}"
 letsencrypt::configure_epel: true
 profile::mysql::databases:
   reloadingdb_staging:
@@ -24,9 +24,10 @@ postfix::manage_root_alias: false
 postfix::relayhost: 'direct'
 redis::manage_repo: true
 profile::reloadingdb::ssh_authorized_keys: "%{alias('root::ssh_authorized_keys')}"
-root::password: $6$saltsalt$9ziBs9AEJySZ60zE.FFuAgkhdbA.zeO3Uv6m7ACU45I05EdujZ4cvVIJW9JIqK7hnIvn/Ci/CsASOZ9VWiPgv.
+profile::reloadingdb::admin_emails: "%{alias('root::mailaliases')}"
 root::mailaliases:
-  - treydock@gmail.com
+  - "%{lookup('admin_email')}"
+root::password: $6$saltsalt$9ziBs9AEJySZ60zE.FFuAgkhdbA.zeO3Uv6m7ACU45I05EdujZ4cvVIJW9JIqK7hnIvn/Ci/CsASOZ9VWiPgv.
 rvm::install_dependencies: true
 rvm::gnupg_key_id: false
 rvm::system::home: /root
