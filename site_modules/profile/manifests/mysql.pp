@@ -1,5 +1,7 @@
 #
-class profile::mysql {
+class profile::mysql (
+  Hash $databases = {}
+) {
 
   include ::mysql::server
   include ::mysql::server::backup
@@ -7,5 +9,7 @@ class profile::mysql {
   #include ::mysql::server::mysqltuner
   include ::mysql::bindings
   include ::mysql::client
+
+  create_resources('mysql::db', $databases)
 
 }
