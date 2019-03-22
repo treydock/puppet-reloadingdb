@@ -1,13 +1,15 @@
 ---
+profile::firewall::allow_ssh: "%{alias('dev_addresses')}"
+profile::firewall::allow_apache: "%{alias('dev_addresses')}"
 profile::mysql::databases:
   reloadingdb_staging:
     user: staging
-    host: 'localhost'
+    host: localhost
     grant: ALL
     password: "%{lookup('reloadingdb_database_password_staging')}"
   reloadingdb_production:
     user: production
-    host: 'localhost'
+    host: localhost
     grant: ALL
     password: "%{lookup('reloadingdb_database_password_production')}"
 mysql::server::remove_default_accounts: true
@@ -15,6 +17,35 @@ mysql::server::backup::backupuser: 'backup'
 mysql::server::backup::backupdir: '/opt/mysql-backups'
 mysql::server::backup::file_per_database: true
 redis::manage_repo: true
+profile::reloadingdb::ssh_authorized_keys: "%{alias('root::ssh_authorized_keys')}"
+root::password: $6$saltsalt$9ziBs9AEJySZ60zE.FFuAgkhdbA.zeO3Uv6m7ACU45I05EdujZ4cvVIJW9JIqK7hnIvn/Ci/CsASOZ9VWiPgv.
+root::mailaliases:
+  - treydock@gmail.com
 rvm::install_dependencies: true
 rvm::gnupg_key_id: false
 rvm::system::home: /root
+ssh::server_options:
+  Protocol: '2'
+  Port: '22'
+  SyslogFacility: AUTHPRIV
+  PasswordAuthentication: 'yes'
+  ChallengeResponseAuthentication: 'no'
+  GSSAPIAuthentication: 'no'
+  HostbasedAuthentication: 'no'
+  PubkeyAuthentication: 'yes'
+  KerberosAuthentication: 'no'
+  StrictModes: 'yes'
+  PermitRootLogin: without-password
+  PermitEmptyPasswords: 'no'
+  PermitUserEnvironment: 'no'
+  PrintMotd: 'yes'
+  UseDNS: 'yes'
+  UsePrivilegeSeparation: 'yes'
+  X11Forwarding: 'no'
+  X11UseLocalhost: 'yes'
+  AcceptEnv:
+    - 'LANG LC_CTYPE LC_NUMERIC LC_TIME LC_COLLATE LC_MONETARY LC_MESSAGES'
+    - 'LC_PAPER LC_NAME LC_ADDRESS LC_TELEPHONE LC_MEASUREMENT LC_IDENTIFICATION'
+    - 'LC_ALL LANGUAGE XMODIFIERS'
+ssh::storeconfigs_enabled: false
+ssh::knownhosts::collect_enabled: false

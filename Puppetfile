@@ -10,9 +10,11 @@ mod 'golja/gnupg', '1.2.3'
 mod 'iptables', git: 'https://github.com/treydock/puppet-iptables.git', ref: 'b440062'
 mod 'puppetlabs/mysql', '8.0.1'
 mod 'puppet/redis', '4.0.0'
+mod 'treydock/root', '4.0.0'
 #mod 'rvm', git: 'https://github.com/maestrodev/puppet-rvm.git', ref: '967c58c'
 # https://github.com/maestrodev/puppet-rvm/pull/142
 mod 'rvm', git: 'https://github.com/treydock/puppet-rvm.git', ref: '601c68e'
+mod 'saz/ssh', '5.0.0'
 mod 'puppetlabs/stdlib', '5.2.0'
 mod 'puppetlabs/translate', '1.2.0'
 

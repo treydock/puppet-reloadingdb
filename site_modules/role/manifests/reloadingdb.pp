@@ -3,5 +3,8 @@ class role::reloadingdb {
   include profile::firewall
   include profile::mysql
   include profile::redis
+  include profile::reloadingdb
+  include profile::root
   include profile::rvm
+  include profile::ssh
 }
