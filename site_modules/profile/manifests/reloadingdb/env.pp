@@ -3,11 +3,12 @@ define profile::reloadingdb::env (
   String $webhost = 'reloadingdb.com',
   Integer $uid = 1002,
   Hash $ssh_authorized_keys = {},
-  Array $admin_emails = ['treydock@gmail.com'],
+  Array $admin_emails = [],
 ) {
 
   $user = "reloadingdb-${name}"
   $approot = "/var/www/${webhost}"
+  $master_key = lookup('reloadingdb_master_key')
 
   user { $user:
     ensure         => 'present',
@@ -64,9 +65,29 @@ define profile::reloadingdb::env (
   }
   file { $approot:
     ensure => 'directory',
-    owner  => 'root',
-    group  => 'root',
+    owner  => $user,
+    group  => $user,
     mode   => '0755',
+  }
+  file { "${approot}/shared":
+    ensure => 'directory',
+    owner  => $user,
+    group  => $user,
+    mode   => '0755',
+  }
+  file { "${approot}/shared/config":
+    ensure => 'directory',
+    owner  => $user,
+    group  => $user,
+    mode   => '0755',
+  }
+  file { "${approot}/shared/config/master.key":
+    ensure    => 'file',
+    owner     => $user,
+    group     => $user,
+    mode      => '0600',
+    content   => "${master_key}\n",
+    show_diff => false,
   }
 
 }
