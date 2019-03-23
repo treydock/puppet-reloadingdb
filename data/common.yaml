@@ -5,6 +5,7 @@ profile::firewall::allow_ssh: "%{alias('dev_addresses')}"
 profile::firewall::allow_apache: "%{alias('dev_addresses')}"
 letsencrypt::email: "%{lookup('admin_email')}"
 letsencrypt::configure_epel: true
+mysql::bindings::daemon_dev: true
 profile::mysql::databases:
   reloadingdb_staging:
     user: staging
