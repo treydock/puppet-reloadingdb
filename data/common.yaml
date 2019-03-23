@@ -27,6 +27,16 @@ profile::reloadingdb::ssh_authorized_keys: "%{alias('root::ssh_authorized_keys')
 root::password: $6$saltsalt$9ziBs9AEJySZ60zE.FFuAgkhdbA.zeO3Uv6m7ACU45I05EdujZ4cvVIJW9JIqK7hnIvn/Ci/CsASOZ9VWiPgv.
 root::mailaliases:
   - treydock@gmail.com
+root::ssh_authorized_keys:
+  tdockendorf@macbook-pro:
+    type: ssh-rsa
+    key: 'AAAAB3NzaC1yc2EAAAADAQABAAABAQDsKsSBv7UoJ5EhRfd8XDO/reFPbkdURVObxGmUL8SZwEuBq71o/uxlNF64ELjtXd0+hB0u2sddOI1o9Hhe4RP0lq0IZAh1SJISGQn1kPX9Ifm0REbc6ByMDrryHP60ax7p9VFTXzn8+feHIvd6QqFrhOfv4s35tjV4h3hoAq3Su7Qil0LSF/dvUfr3LhY+ViwVBJ15maXbyBIIExTYeKgzuYTYua/BovisbS8KTAN+84JW18g+IRfp3NtSeFcPusLy+uQiMgufRzKW3n0EeGF3MTAL0irbazoSz5fFwRnhnZQR3jSpMBXdpJC9s5F7Twhk+R/6VEoJNzbMmjn333FJ'
+  treydock@desktop:
+    type: ssh-rsa
+    key: 'AAAAB3NzaC1yc2EAAAADAQABAAABAQC2ZnfTp44NX5q7u84r24QWHnMbYCXvHV9gM0tkHeh+mpUb5HTN2cXH39DdDZ3Cgz7muEEFmQJSC8K4dm33XJXbgNt5OSTc+H5Ri4iEpn+/lPl+nvvhB2IZTGJHLPrUIpTxgcbE85ddsb7voV5Mk9g3tmQv0vnf44cpA8PiLXbG8dfRDtFs+QwIReWtR4epjY2J0wdIV52KbA3U1119zqARQdG2Yt42jiuo7uSDiF+AeKkTF3Tqx6MqwUdCCVSIej2y8iJxIUUV+RgHKXGvkhicIdPbrDS2zmFh4SU3Pf2fQW2M4T5hQAh1Jk48d16Qgvdk7SW7y86nkC5Hg/1Yg3C7'
+  trey@macbook:
+    type: ssh-rsa
+    key: 'AAAAB3NzaC1yc2EAAAABIwAAAQEA1FJz8F3z01KewaYAnu9maqwCNJ80fiaQyRBU+G3kstfIU94NN5WxRk9vIpVP0c/PwXGc0npxdgQxQYPrfkccE9jN2QNN91yElBQUB0lEr1KlkMNgmxmtd2Hc/voBH+MdpJjQH5ED6qAckbJwzxHiYdRD60L0XHhfkJshsxyVX9k70bIVv3aUav6gdm+wcNkmk9aF/sXk43Ss0ykflmw2GuFmxOp2vQYyQiUY6/++M2GhZvdkOpnGO9dtiqFvpj1W4ieH8/0feTW94I+xs2Q5XFsL8JQdGOkPgF7dyERxbstBZNjXXwfz+Oq0ypRjPQbIjyLFH+yPal23fqTOSqVYuw=='
 rvm::install_dependencies: true
 rvm::gnupg_key_id: false
 rvm::system::home: /root
