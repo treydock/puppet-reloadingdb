@@ -21,7 +21,7 @@ class profile::rvm {
   Package['curl']
   ->Exec['import_rvm_key']
   ->Exec['import_rvm_key2']
-  ->Class['::rvm']
+  ->Class['::rvm::system']
 
   rvm_system_ruby { 'ruby-2.5.1':
     ensure      => 'present',
