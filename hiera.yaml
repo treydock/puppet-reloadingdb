@@ -6,6 +6,7 @@ defaults:
 hierarchy:
   - name: "Hierarchy (yaml version)"
     paths:
+      - sensu.yaml
       - common.yaml
   - name: "Hierarchy (eyaml version)"
     paths:
