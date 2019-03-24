@@ -12,6 +12,10 @@ mod 'golja/gnupg', '1.2.3'
 mod 'puppetlabs/inifile', '2.5.0'
 mod 'iptables', git: 'https://github.com/treydock/puppet-iptables.git', ref: 'b440062'
 mod 'puppet/letsencrypt', '3.0.0'
+#mod 'adamcrews/mlocate', '0.4.0'
+# https://github.com/adamcrews/puppet-mlocate/pull/24
+# https://github.com/adamcrews/puppet-mlocate/pull/13
+mod 'mlocate', git: 'https://github.com/treydock/puppet-mlocate', ref: '323da5e'
 mod 'puppetlabs/mysql', '8.0.1'
 mod 'camptocamp/postfix', '1.7.0'
 mod 'puppet/redis', '4.0.0'
