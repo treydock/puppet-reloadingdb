@@ -92,3 +92,33 @@ reloadingdb_master_key: >
     x7gt+p6oOnW0uMv4soIBg4Xfb6hyoOM0n++ELwAT8o/SWwENQM6u7XAplhZH
     Edfqu5+iofHI5yqpsFHWlJ9vTa2Vf9Q9gPWC7Bc8K3T9rHdD9JziHRb82Kww
     /tUaWxGEQh1ENDROL3B3CMqHc4sGl2eQvoOcZv3bfafOwOc=]
+sensu::backend::password: >
+    ENC[GPG,hQIMA9OrdTBygJl2AQ//QAOM75yBjrKaTXnjc62lC7v1fPu2nV+K/upcEtIT
+    wni0i/tvt1yfxVUqKaaIYKlY/SqZiV4qVXsRN7Cn4FowQuyM737RtTcbJN1a
+    kjsIeYCBbFhykTMHYWSH8xW0UooWvNQUUmn00gngSiG+sxMf2m6Z9qVqUPzv
+    s8I4Mg+gKxf+Ek7uxIcP90JTQqO1UqMTBPOEEuBekb/6Wkm8fCjNkMMOWbMv
+    LMWOw+VaiqA65d0YwHgCLkRFpNf4TfeH1GxMxXoNF00kYP3FF/q2DUOi35X5
+    BH/o5uUXaz7jpH8HyXxgLP65TDAGpPtf9anc8XnBlJPJIw/hRnrSTMZ4GhYl
+    8lu5xAgjNHlcXxrJvCdC+qYB0gGv5uLj6ZdbynK7ab3EPIxzClzUmUCjlYpo
+    0I2pa2rnqMeyMWiwSQb5cKdne+QxDKWbRN8cMQsJ92A0nyg+PxJSY2fLyIAt
+    0u5KdX0J3ZbY8kD3mWYrnEeAve6KOt1LGfjxSwQyCtvTt/HA7DWW3WxMCkgK
+    NS1x0r5fDRcCo3bFwZ9HTQnL+X4qfjhY+KOS5PHN0Yt7sn5PJ/lu0UKqR/D7
+    zRucEGkmMzAy5mttuO+nlN1BUnbRYpax2MoT9os1jgLcXWEAO1z4pD3LzHfD
+    OdDRq7al9wt3BxLUapht2/4EntbgI/Vv7byvtjfqzw7STwE+XnslrupIf4ew
+    8//PskgkmWvOYFKeirCLcmyqQ7xlamBnGo1TaGX8/LSBru+nye1fFtSGreAR
+    ZYA6+ddA/9poJZGnzbYgqWGQxIHLtPI=]
+sensu::backend::old_password: >
+    ENC[GPG,hQIMA9OrdTBygJl2AQ//XgeaO++DkBc9OBctZAkXKEh5/164FRFiGGY0sn6y
+    bSffOxGeGxr/sFfD+n154dM26DeUegA80OMCWS2M+73ThzxzClaW4aNq65HN
+    e+v7N9X8R0ZLz3CX7AT4UrpLyV14WtEVQDyJrDju89rtwLFGoyjEebxX3t0c
+    7h4tRgi36hnMUpca9I2LAvJUb6S2Rn96+4Y3vYaxD0k9bkHQ25O2mEFFktUt
+    /7mnr8uMLTMFnTyCtAdKcLUZ9ZNX9m6/SlP244MDsaLx5EzCECp9VH8q4sIh
+    rhtlPqNwCofjKWB1n07YETZKPXf6bryWpJCDCXhP8CqGLTl7Zn/8/2QtUZJm
+    do+UC2yJdf6Kqm+2z8SviDSHRvbeJa6QenixQUjzV7fJstvKY97Z0GMjouSC
+    Fcv6T3W1dIP2onKrxhX3PFNeJqvwtTTY29baH1eaGuewZUkvkbzcMaKO6jJ3
+    FiURA5ECp0d1MSXFq7sw7QdVnx8ukvhOYjLJZKrLrs2sS4ibvOlPPkQ5E1+M
+    ZdPOsaMstEnWBuLLXhAD9YU+rstejfiwhPYF/LMQXgADjHLvca/1ZVpAfzxb
+    A7j2lv/LLpyK9Og8NancHC0yWizoCw3FZwQPYc+9TMIyrl4LDpSNrmqvpXPz
+    bE0jgbWDqqpoyhfHrFLh9Gr1uShcGBy0L8oK14he53bSRAGSrUqwDuqADGmd
+    2uV40hW2tRzUX88ygvzcK+9Ij3qA09GzWrLg5XHI4FaNbYdBhzjZ9rtgXyD1
+    k4U/cYJ0tN0S8rlJ]

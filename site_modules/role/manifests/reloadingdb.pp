@@ -8,5 +8,6 @@ class role::reloadingdb {
   include profile::reloadingdb
   include profile::root
   include profile::rvm
+  include profile::sensu
   include profile::ssh
 }

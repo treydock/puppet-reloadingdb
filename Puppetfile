@@ -19,6 +19,9 @@ mod 'treydock/root', '4.0.0'
 #mod 'rvm', git: 'https://github.com/maestrodev/puppet-rvm.git', ref: '967c58c'
 # https://github.com/maestrodev/puppet-rvm/pull/142
 mod 'rvm', git: 'https://github.com/treydock/puppet-rvm.git', ref: '601c68e'
+#mod 'sensu/sensu', '3.0.0'
+# https://github.com/sensu/sensu-puppet/pull/1097
+mod 'sensu', git: 'https://github.com/treydock/sensu-puppet.git', ref: '57a6ec8'
 mod 'saz/ssh', '5.0.0'
 mod 'puppetlabs/stdlib', '5.2.0'
 mod 'puppetlabs/translate', '1.2.0'
