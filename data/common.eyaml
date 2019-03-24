@@ -122,3 +122,18 @@ sensu::backend::old_password: >
     bE0jgbWDqqpoyhfHrFLh9Gr1uShcGBy0L8oK14he53bSRAGSrUqwDuqADGmd
     2uV40hW2tRzUX88ygvzcK+9Ij3qA09GzWrLg5XHI4FaNbYdBhzjZ9rtgXyD1
     k4U/cYJ0tN0S8rlJ]
+sensu_mysql_password: >
+    ENC[GPG,hQIMA9OrdTBygJl2AQ/+OYOKQg96Y9PJ3YNtNj+Vq0kqrvrQRs9uP78gTEGr
+    e7sC+X0uWfDbMUskOpMsA28TEH6Lhln8TMWh2n7Qq6x+nwWpUXAOoYk1AaMQ
+    RmHsEYwKuhWzoXyor7ZlcFoa55jXzV2R8zmG949M3kxA4smeF2L5XXDU4zw8
+    GnMxno6k2SAZB/hhoGWL6/HM/UJcwQIEdrbdMXRtKvS5t1FXuArQgK0+Wwgl
+    pd7Z1hxy0/l8/4692luWGVJ13izVwogT+M/FQ4rkuF3i06WvJO4u2ICJdSIp
+    VMS5W9F8uzwqWSWpzwGtsu3EZmKnVxpbnvmqW28p0eGdZwqV8P9XgQZiViVp
+    us9wRpaq86nQWwVt26XQH07qPLFv9YhYtQJVpl5uVXXzL1BdXrhQaIqwlBvU
+    wKPUXp8HHnuIjg9aR6Ip7Wlg9P+XT04qsx9Pj1waQYM912/vyb7ssxyAR0jd
+    mj2E6miCbF2HLWuEO5UzEy+oAxJwUqyelWzdnow441fKrcwtPLJkHASOSxgQ
+    LUXnetddvM4Il0hWTVjHiVl3oWZz9usG7LAWvFTCmiH/V7lZh3WXkfL5z9CB
+    U03Su3/jEzaFeCossxGs+cv8EOwMBWqzmEHF7ji8I+lCFQTwmxjMfEOkaHv6
+    6w3asD/Z3+M8ncB+HmjnEvUcaV5PzfCfNb8iDJig3B3SQwEqoexnML+CjA0h
+    KJTMJH7qqDZrktil8NMHdOli7mh7YYJ/07vtDis96p/BGSuLJJSv+YyZzwKO
+    33Do/Fb4gwQnwFc=]

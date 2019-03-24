@@ -1,6 +1,63 @@
 ---
+sensu::plugins::plugins:
+  http:
+    version: '4.1.0'
+  mysql:
+    version: '3.1.1'
+  network-checks:
+    version: '3.2.1'
+  process-checks:
+    version: '3.2.0'
+  ssl:
+    version: '2.0.1'
 sensu::backend::assets:
   sensu-email-handler:
     ensure: present
     url: 'https://github.com/sensu/sensu-email-handler/releases/download/0.1.0/sensu-email-handler_0.1.0_linux_amd64.tar.gz'
     sha512: '755c7a673d94997ab9613ec5969666e808f8b4a8eec1ba998ee7071606c96946ca2947de5189b24ac34a962713d156619453ff7ea43c95dae62bf0fcbe766f2e'
+    filters:
+      - "entity.system.os == 'linux'"
+      - "entity.system.arch == 'amd64'"
+sensu::backend::handlers:
+  email:
+    ensure: present
+    type: pipe
+    command: "sensu-email-handler -f root@localhost -t %{lookup('admin_email')} -s localhost -i"
+    timeout: 10
+    runtime_assets:
+      - sensu-email-handler
+    filters:
+      - is_incident
+      - not_silenced
+      - hourly
+      - awake_hours
+sensu::backend::filters:
+  hourly:
+    ensure: present
+    action: allow
+    expressions:
+      - 'event.check.occurrences == 1 || event.check.occurrences % (3600 / event.check.interval) == 0'
+  awake_hours:
+    ensure: present
+    action: allow
+    expressions:
+      - 'hour(event.timestamp) >= 8 && hour(event.timestamp) <= 23'
+sensu::backend::checks:
+  mysql-check-alive:
+    ensure: absent
+    command: "/opt/sensu-plugins-ruby/embedded/bin/check-mysql-alive.rb -h localhost -u sensu -p %{lookup('sensu_mysql_password')} -s /var/lib/mysql/mysql.sock -d sensu"
+    subscriptions:
+      - all
+    handlers:
+      - email
+    interval: 60
+    publish: true
+  mysqld-proc:
+    ensure: present
+    command: '/opt/sensu-plugins-ruby/embedded/bin/check-process.rb -p mysqld -u mysql -C 1'
+    subscriptions:
+      - all
+    handlers:
+      - email
+    interval: 60
+    publish: true

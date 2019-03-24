@@ -17,6 +17,15 @@ profile::mysql::databases:
     host: localhost
     grant: ALL
     password: "%{lookup('reloadingdb_database_password_production')}"
+  sensu:
+    user: sensu
+    host: localhost
+    grant: ALL
+    password: "%{lookup('sensu_mysql_password')}"
+#profile::mysql::users:
+#  sensu@localhost:
+#    ensure: present
+#    password: "%{lookup('sensu_mysql_password')}"
 mysql::server::remove_default_accounts: true
 mysql::server::backup::backupuser: 'backup'
 mysql::server::backup::backupdir: '/opt/mysql-backups'
@@ -47,6 +56,9 @@ sensu::agent::config_hash:
   name: reloadingdb
   subscriptions:
     - all
+  log-level: debug
+sensu::backend::config_hash:
+  log-level: debug
 ssh::server_options:
   Protocol: '2'
   Port: '22'
