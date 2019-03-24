@@ -1,5 +1,7 @@
 ---
 sensu::plugins::plugins:
+  disk-checks:
+    version: '4.0.1'
   http:
     version: '4.1.0'
   mysql:
@@ -43,6 +45,15 @@ sensu::backend::filters:
     expressions:
       - 'hour(event.timestamp) >= 8 && hour(event.timestamp) <= 23'
 sensu::backend::checks:
+  disks:
+    ensure: present
+    command: "/opt/sensu-plugins-ruby/embedded/bin/check-disk-usage.rb -t '(xfs|ext4)'"
+    subscriptions:
+      - all
+    handlers:
+      - email
+    interval: 1800
+    publish: true
   mysql-check-alive:
     ensure: absent
     command: "/opt/sensu-plugins-ruby/embedded/bin/check-mysql-alive.rb -h localhost -u sensu -p %{lookup('sensu_mysql_password')} -s /var/lib/mysql/mysql.sock -d sensu"
