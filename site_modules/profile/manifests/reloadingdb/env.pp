@@ -93,7 +93,7 @@ define profile::reloadingdb::env (
 
   $rvm = '/usr/local/rvm/bin/rvm'
   cron { 'puma':
-    command => "${rvm} ${gemset} do bundle exec puma -C ${approot}/shared/puma.rb --daemon",
+    command => "cd ${approot}/current && ${rvm} ${gemset} do bundle exec puma -C ${approot}/shared/puma.rb --daemon 2>&1 | logger -t puma-${user}",
     user    => $user,
     special => 'reboot',
   }
