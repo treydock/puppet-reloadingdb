@@ -6,6 +6,7 @@ class profile::reloadingdb (
 
   profile::reloadingdb::env { 'staging':
     webhost             => 'staging.reloadingdb.com',
+    port                => 9291,
     uid                 => 1001,
     ssh_authorized_keys => $ssh_authorized_keys,
     admin_emails        => $admin_emails,

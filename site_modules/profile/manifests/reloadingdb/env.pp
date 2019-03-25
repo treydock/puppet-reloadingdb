@@ -1,6 +1,7 @@
 #
 define profile::reloadingdb::env (
   String $webhost = 'reloadingdb.com',
+  Integer $port = 9292,
   Integer $uid = 1002,
   Hash $ssh_authorized_keys = {},
   Array $admin_emails = [],
@@ -96,6 +97,29 @@ define profile::reloadingdb::env (
     command => "cd ${approot}/current && ${rvm} ${gemset} do bundle exec puma -C ${approot}/shared/puma.rb --daemon 2>&1 | logger -t puma-${user}",
     user    => $user,
     special => 'reboot',
+  }
+
+  if $facts['virtual'] == 'virtualbox' {
+    $ssl_cert = undef
+    $ssl_chain = undef
+    $ssl_key = undef
+  } else {
+    $ssl_cert = "/etc/letsencrypt/live/${webhost}/cert.pem"
+    $ssl_chain = "/etc/letsencrypt/live/${webhost}/chain.pem"
+    $ssl_key = "/etc/letsencrypt/live/${webhost}/privkey.pem"
+  }
+
+  apache::vhost { $webhost:
+    servername  => $webhost,
+    port        => '443',
+    docroot     => "${approot}/current/public",
+    ssl         => true,
+    ssl_cert    => $ssl_cert,
+    ssl_chain   => $ssl_chain,
+    ssl_key     => $ssl_key,
+    directories => [],
+    no_proxy_uris => ['/assets', '/system'],
+    proxy_dest => "http://127.0.0.1:${port}",
   }
 
 }

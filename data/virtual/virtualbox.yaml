@@ -1,0 +1,7 @@
+---
+profile::firewall::rules:
+  '00443 *:443':
+    ensure: present
+    proto: tcp
+    dport: '443'
+    action: accept

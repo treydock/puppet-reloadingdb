@@ -6,6 +6,7 @@ defaults:
 hierarchy:
   - name: "Hierarchy (yaml version)"
     paths:
+      - "virtual/%{facts.virtual}.yaml"
       - sensu.yaml
       - common.yaml
   - name: "Hierarchy (eyaml version)"
