@@ -99,6 +99,15 @@ define profile::reloadingdb::env (
     special => 'reboot',
   }
 
+  sensu_check { "puma-port-${name}":
+    ensure        => 'present',
+    command       => "/opt/sensu-plugins-ruby/embedded/bin/check-ports.rb -H 127.0.0.1 -p ${port}",
+    subscriptions => ['all'],
+    handlers      => ['email'],
+    interval      => 300,
+    publish       => true,
+  }
+
   if $facts['virtual'] == 'virtualbox' {
     $ssl_cert = undef
     $ssl_chain = undef
