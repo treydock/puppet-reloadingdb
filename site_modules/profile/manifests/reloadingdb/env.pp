@@ -4,6 +4,7 @@ define profile::reloadingdb::env (
   Integer $uid = 1002,
   Hash $ssh_authorized_keys = {},
   Array $admin_emails = [],
+  String $gemset = 'ruby-2.5.1@reloadingdb',
 ) {
 
   $user = "reloadingdb-${name}"
@@ -88,6 +89,13 @@ define profile::reloadingdb::env (
     mode      => '0600',
     content   => "${master_key}\n",
     show_diff => false,
+  }
+
+  $rvm = '/usr/local/rvm/bin/rvm'
+  cron { 'puma':
+    command => "${rvm} ${gemset} do bundle exec puma -C ${approot}/shared/puma.rb --daemon",
+    user    => $user,
+    special => 'reboot',
   }
 
 }

@@ -9,6 +9,7 @@ class profile::reloadingdb (
     uid                 => 1001,
     ssh_authorized_keys => $ssh_authorized_keys,
     admin_emails        => $admin_emails,
+    gemset              => 'ruby-2.5.1@reloadingdb-staging',
   }
   
 
