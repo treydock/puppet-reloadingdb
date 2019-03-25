@@ -23,6 +23,7 @@ mod 'treydock/root', '4.0.0'
 #mod 'rvm', git: 'https://github.com/maestrodev/puppet-rvm.git', ref: '967c58c'
 # https://github.com/maestrodev/puppet-rvm/pull/142
 mod 'rvm', git: 'https://github.com/treydock/puppet-rvm.git', ref: '601c68e'
+mod 'puppet/selinux', '1.6.1'
 #mod 'sensu/sensu', '3.0.0'
 # https://github.com/sensu/sensu-puppet/pull/1097
 mod 'sensu', git: 'https://github.com/treydock/sensu-puppet.git', ref: '57a6ec8'
