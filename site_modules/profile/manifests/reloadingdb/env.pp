@@ -112,10 +112,14 @@ define profile::reloadingdb::env (
     $ssl_cert = undef
     $ssl_chain = undef
     $ssl_key = undef
+    $check_https_args = "-u https://${webhost} -k"
+    $check_https_cert_args = "-u https://${webhost} -w 14 -c 7 -k"
   } else {
     $ssl_cert = "/etc/letsencrypt/live/${webhost}/cert.pem"
     $ssl_chain = "/etc/letsencrypt/live/${webhost}/chain.pem"
     $ssl_key = "/etc/letsencrypt/live/${webhost}/privkey.pem"
+    $check_https_args = "-u https://${webhost}"
+    $check_https_cert_args = "-u https://${webhost} -w 14 -c 7"
   }
 
   apache::vhost { $webhost:
@@ -130,5 +134,24 @@ define profile::reloadingdb::env (
     no_proxy_uris => ['/assets', '/system'],
     proxy_dest => "http://127.0.0.1:${port}",
   }
+
+  sensu_check { "check-https-${name}":
+    ensure        => 'present',
+    command       => "/opt/sensu-plugins-ruby/embedded/bin/check-http.rb ${check_https_args}",
+    subscriptions => ['all'],
+    handlers      => ['email'],
+    interval      => 300,
+    publish       => true,
+  }
+
+  sensu_check { "check-https-cert-${name}":
+    ensure        => 'present',
+    command       => "/opt/sensu-plugins-ruby/embedded/bin/check-https-cert.rb ${check_https_cert_args}",
+    subscriptions => ['all'],
+    handlers      => ['email'],
+    interval      => 86400,
+    publish       => true,
+  }
+
 
 }
