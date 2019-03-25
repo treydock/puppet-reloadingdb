@@ -33,6 +33,15 @@ sensu::backend::handlers:
       - not_silenced
       - hourly
       - awake_hours
+  keepalive:
+    type: set
+    handlers:
+      - email
+    filters:
+      - is_incident
+      - not_silenced
+      - hourly
+      - awake_hours
 sensu::backend::filters:
   hourly:
     ensure: present
