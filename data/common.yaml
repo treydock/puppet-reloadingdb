@@ -30,8 +30,16 @@ mysql::server::remove_default_accounts: true
 mysql::server::backup::backupuser: 'backup'
 mysql::server::backup::backupdir: '/opt/mysql-backups'
 mysql::server::backup::file_per_database: true
+profile::postfix::configs:
+  masquerade_domains:
+    value: reloadingdb.com
+  myhostname:
+    value: reloadingdb.com
+  mydomain:
+    value: reloadingdb.com
 postfix::manage_root_alias: false
 postfix::relayhost: 'direct'
+postfix::myorigin: reloadingdb.com
 redis::manage_repo: true
 profile::reloadingdb::ssh_authorized_keys: "%{alias('root::ssh_authorized_keys')}"
 profile::reloadingdb::admin_emails: "%{alias('root::mailaliases')}"
