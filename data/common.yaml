@@ -49,6 +49,9 @@ root::ssh_authorized_keys:
   trey@macbook:
     type: ssh-rsa
     key: 'AAAAB3NzaC1yc2EAAAABIwAAAQEA1FJz8F3z01KewaYAnu9maqwCNJ80fiaQyRBU+G3kstfIU94NN5WxRk9vIpVP0c/PwXGc0npxdgQxQYPrfkccE9jN2QNN91yElBQUB0lEr1KlkMNgmxmtd2Hc/voBH+MdpJjQH5ED6qAckbJwzxHiYdRD60L0XHhfkJshsxyVX9k70bIVv3aUav6gdm+wcNkmk9aF/sXk43Ss0ykflmw2GuFmxOp2vQYyQiUY6/++M2GhZvdkOpnGO9dtiqFvpj1W4ieH8/0feTW94I+xs2Q5XFsL8JQdGOkPgF7dyERxbstBZNjXXwfz+Oq0ypRjPQbIjyLFH+yPal23fqTOSqVYuw=='
+  treydock@chromebook:
+    type: ssh-rsa
+    key: 'AAAAB3NzaC1yc2EAAAADAQABAAABAQDnGkLKw0sPJsuLM//ZyO7VqAKmdRhnW7ziU+l2C083aATrjm1GeUShh0bF7MFLC81R/OYMF1nOtzlw17l0rxBlfBeQlRUQnHVkNFOtLgNhFTgM6fIHz/vFhtYZkjdTQIXM4nrQnnASw6dczbQ3duBtBVcyGQ2Z4c01ynBJlSBoWdLntYbtYmWy153u9mP0F9dxUxXnPGbrEke6a4JrS9NWYkjJwDUwY2PhWjrgaWaNYmElKJltI35NHWZLxMC8jgoHCSnzRmUGZyekC7Oq+r2FduhxqvalA7kYzrXXSmTDV3xXa8MXvtUK65Ohpr4G4vYWdfVjfZIlV+N6cakV4FKN'
 rvm::install_dependencies: true
 rvm::gnupg_key_id: false
 rvm::system::home: /root
