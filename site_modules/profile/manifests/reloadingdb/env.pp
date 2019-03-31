@@ -153,5 +153,9 @@ define profile::reloadingdb::env (
     publish       => true,
   }
 
+  host { $webhost:
+    ensure => 'present',
+    ip     => '127.0.0.1',
+  }
 
 }
