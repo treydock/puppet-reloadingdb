@@ -31,6 +31,7 @@ mysql::server::backup::backupuser: 'backup'
 mysql::server::backup::backupdir: '/opt/mysql-backups'
 mysql::server::backup::file_per_database: true
 postfix::manage_root_alias: false
+postfix::mta: true
 postfix::relayhost: 'direct'
 postfix::myorigin: reloadingdb.com
 redis::manage_repo: true
