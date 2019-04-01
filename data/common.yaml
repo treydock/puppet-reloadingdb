@@ -32,8 +32,28 @@ mysql::server::backup::backupdir: '/opt/mysql-backups'
 mysql::server::backup::file_per_database: true
 postfix::manage_root_alias: false
 postfix::mta: true
-postfix::relayhost: 'direct'
+#postfix::relayhost: '[smtp.gmail.com]:587'
+postfix::relayhost: '[mail.gandi.net]:587'
 postfix::myorigin: reloadingdb.com
+profile::postfix::configs:
+  smtp_use_tls:
+    value: 'yes'
+# Enable SASL authentication
+  smtp_sasl_auth_enable:
+    value: 'yes'
+# Location of sasl_passwd
+  smtp_sasl_password_maps:
+    value: hash:/etc/postfix/sasl_passwd
+# Disallow methods that allow anonymous authentication
+  smtp_sasl_tls_security_options:
+    value: noanonymous
+  smtp_sasl_security_options:
+    value: noanonymous
+# Location of CA certificates
+  smtp_tls_CAfile:
+    value: /etc/pki/tls/certs/ca-bundle.crt
+  smtp_generic_maps:
+    value: hash:/etc/postfix/generic
 redis::manage_repo: true
 profile::reloadingdb::ssh_authorized_keys: "%{alias('root::ssh_authorized_keys')}"
 profile::reloadingdb::admin_emails: "%{alias('root::mailaliases')}"
