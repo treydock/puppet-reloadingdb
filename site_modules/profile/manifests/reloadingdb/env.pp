@@ -108,18 +108,18 @@ define profile::reloadingdb::env (
     publish       => true,
   }
 
-  if $facts['virtual'] == 'virtualbox' {
-    $ssl_cert = undef
-    $ssl_chain = undef
-    $ssl_key = undef
-    $check_https_args = "-u https://${webhost} -k"
-    $check_https_cert_args = "-u https://${webhost} -w 14 -c 7 -k"
-  } else {
+  if $webhost in $facts['letsencrypt_certs'] {
     $ssl_cert = "/etc/letsencrypt/live/${webhost}/cert.pem"
     $ssl_chain = "/etc/letsencrypt/live/${webhost}/chain.pem"
     $ssl_key = "/etc/letsencrypt/live/${webhost}/privkey.pem"
     $check_https_args = "-u https://${webhost}"
     $check_https_cert_args = "-u https://${webhost} -w 14 -c 7"
+  } else {
+    $ssl_cert = undef
+    $ssl_chain = undef
+    $ssl_key = undef
+    $check_https_args = "-u https://${webhost} -k"
+    $check_https_cert_args = "-u https://${webhost} -w 14 -c 7 -k"
   }
 
   apache::vhost { $webhost:
