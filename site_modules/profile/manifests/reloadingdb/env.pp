@@ -149,7 +149,7 @@ define profile::reloadingdb::env (
     command       => "/opt/sensu-plugins-ruby/embedded/bin/check-https-cert.rb ${check_https_cert_args}",
     subscriptions => ['all'],
     handlers      => ['email'],
-    interval      => 86400,
+    interval      => 21600,
     publish       => true,
   }
 

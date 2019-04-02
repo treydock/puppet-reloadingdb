@@ -81,3 +81,12 @@ sensu::backend::checks:
       - email
     interval: 60
     publish: true
+  postfix-master-proc:
+    ensure: present
+    command: "/opt/sensu-plugins-ruby/embedded/bin/check-process.rb -p 'postfix/master' -u root -C 1"
+    subscriptions:
+      - all
+    handlers:
+      - email
+    interval: 300
+    publish: true
